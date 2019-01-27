@@ -1,0 +1,39 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+
+    mysql:
+      image: mysql:5.7
+      container_name: chalhoub-mysql
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/mysql/my.cnf:/etc/my.cnf
+      environment:
+        - MYSQL_ROOT_PASSWORD=123456
+        - MYSQL_DATABASE=chalhoub
+        - MYSQL_USER=chalhoub_user
+        - MYSQL_PASSWORD=123456
+      ports:
+        - "8082:3306"
+
+    webserver:
+      image: nginx:alpine
+      container_name: chalhoub-webserver
+      working_dir: /application
+      volumes:
+          - .:/application
+          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      ports:
+       - "8080:80"
+
+    php-fpm:
+      build: phpdocker/php-fpm
+      container_name: chalhoub-php-fpm
+      working_dir: /application
+      volumes:
+        - .:/application
+        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+
