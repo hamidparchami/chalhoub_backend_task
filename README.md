@@ -9,7 +9,7 @@ GET localhost:8080/api/v1/products
 2. product detail:<br>
 GET localhost:8080/api/v1/products/{product_id}
 
-3. create new product<br>
+3. create new product:<br>
 POST /api/v1/products HTTP/1.1<br>
 Host: localhost:8080<br>
 Content-Type: application/json<br>
