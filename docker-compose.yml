@@ -5,17 +5,14 @@ version: "3.1"
 services:
 
     mysql:
-      image: mysql:5.7
+      build:
+        context: .
+        dockerfile: phpdocker/mysql/Dockerfile
       container_name: chalhoub-mysql
       working_dir: /application
       volumes:
         - .:/application
         - ./phpdocker/mysql/my.cnf:/etc/my.cnf
-      environment:
-        - MYSQL_ROOT_PASSWORD=123456
-        - MYSQL_DATABASE=chalhoub
-        - MYSQL_USER=chalhoub_user
-        - MYSQL_PASSWORD=123456
       ports:
         - "8082:3306"
 
@@ -30,10 +27,11 @@ services:
        - "8080:80"
 
     php-fpm:
-      build: phpdocker/php-fpm
+      build:
+        context: .
+        dockerfile: phpdocker/php-fpm/Dockerfile
       container_name: chalhoub-php-fpm
       working_dir: /application
       volumes:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
-

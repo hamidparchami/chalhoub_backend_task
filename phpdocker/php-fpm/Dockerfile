@@ -1,4 +1,4 @@
-FROM phpdockerio/php73-fpm:latest
+FROM phpdockerio/php72-fpm:latest
 WORKDIR "/application"
 
 # Fix debconf warnings upon build
@@ -6,5 +6,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install selected extensions and other stuff
 RUN apt-get update \
-    && apt-get -y --no-install-recommends install php7.3-mysql php7.3-bcmath php7.3-odbc \
+    && apt-get -y --no-install-recommends install php7.2-mysql php7.2-bcmath php7.2-odbc \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+COPY phpdocker/php-fpm/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
