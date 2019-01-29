@@ -1,5 +1,5 @@
-"# This is chalhoub backend task by Hamid Parchami"<br>
-<strong>Run the Project</strong>
+<strong>"This is chalhoub backend task by Hamid Parchami"</strong><br><br>
+<strong>Run the Project:</strong><br>
 docker-compose up -d
 
 <strong>Endpoints:</strong><br>
