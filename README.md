@@ -22,3 +22,6 @@ run vendor/bin/phpunit
 
 <strong>Seeder:</strong><br>
 php artisan db:seed --class=ProductsTableSeeder --env=artisan
+
+<strong>Note:</strong><br>
+You should pass --env=artisan if you want to run artisan commands related to database in your terminal.
