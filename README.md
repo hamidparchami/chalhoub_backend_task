@@ -1,7 +1,7 @@
 <strong>"This is chalhoub backend task by Hamid Parchami"</strong><br><br>
 <strong>Run the Project:</strong><br>
 1. docker-compose up<br>
-Note: The entry point runs "compser install" in the background, so we do not pass -d to docker-compse up, to see what is going on.<br>
+Note: The entrypoint runs "compser install" in the background, so we do not pass -d to docker-compose up, to see what is going on.<br>
 2. php artisan migrate --env=artisan
 
 <strong>Note:</strong><br>
