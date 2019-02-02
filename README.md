@@ -7,6 +7,12 @@ Note: The entrypoint runs "composer install" in the background, so we do not pas
 <strong>Note:</strong><br>
 You should pass --env=artisan at the end, if you want to run database related artisan commands in your terminal.
 
+<strong>Seeder:</strong><br>
+php artisan db:seed --class=ProductsTableSeeder --env=artisan
+
+<strong>Tests:</strong><br>
+run sudo vendor/bin/phpunit
+
 <strong>Endpoints:</strong><br>
 1. list of products:<br>
 GET localhost:8080/api/v1/products
@@ -21,9 +27,3 @@ Content-Type: application/json<br>
 Cache-Control: no-cache<br>
 Postman-Token: 593131f3-0870-426d-98a4-061f0d5be716<br><br>
 {"title":"product test 1", "abstract":"abstract for product test 1", "description":"description for product test 1", "image_url":"http://lorempixel.com/400/200", "price":500, "stock":5}
-
-<strong>Tests:</strong><br>
-run sudo vendor/bin/phpunit
-
-<strong>Seeder:</strong><br>
-php artisan db:seed --class=ProductsTableSeeder --env=artisan
