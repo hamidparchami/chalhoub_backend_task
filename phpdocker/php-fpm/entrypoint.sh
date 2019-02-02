@@ -21,8 +21,4 @@ php /application/artisan key:generate
 #clear config cache
 php /application/artisan config:clear
 
-#create tables
-sleep 3
-php /application/artisan migrate
-
 tail -f /dev/stdout

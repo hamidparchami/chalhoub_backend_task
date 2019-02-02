@@ -1,6 +1,10 @@
 <strong>"This is chalhoub backend task by Hamid Parchami"</strong><br><br>
 <strong>Run the Project:</strong><br>
-docker-compose up -d
+1. docker-compose up -d
+2. php artisan migrate --env=artisan
+
+<strong>Note:</strong><br>
+You should pass --env=artisan at the end, if you want to run database related artisan commands in your terminal.
 
 <strong>Endpoints:</strong><br>
 1. list of products:<br>
@@ -22,6 +26,3 @@ run vendor/bin/phpunit
 
 <strong>Seeder:</strong><br>
 php artisan db:seed --class=ProductsTableSeeder --env=artisan
-
-<strong>Note:</strong><br>
-You should pass --env=artisan if you want to run artisan commands related to database in your terminal.
