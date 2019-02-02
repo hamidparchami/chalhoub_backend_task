@@ -23,7 +23,7 @@ Postman-Token: 593131f3-0870-426d-98a4-061f0d5be716<br><br>
 {"title":"product test 1", "abstract":"abstract for product test 1", "description":"description for product test 1", "image_url":"http://lorempixel.com/400/200", "price":500, "stock":5}
 
 <strong>Tests:</strong><br>
-run vendor/bin/phpunit
+run sudo vendor/bin/phpunit
 
 <strong>Seeder:</strong><br>
 php artisan db:seed --class=ProductsTableSeeder --env=artisan
